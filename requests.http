@@ -1,0 +1,52 @@
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "CaMi",
+  "email": "jeanpaulcami@live.com",
+  "password": "password"
+}
+
+###  (Add `###` to separate different requests)
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "securePassword123"
+}
+
+###  (Add `###` to separate different requests)
+GET http://localhost:3000/api/orders/{{orderId}}
+Authorization: Bearer {{token}}  # Replace {{token}} with a valid JWT token
+###  (Add `###` to separate different requests)
+
+POST http://localhost:3000/api/cart/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjdlYzE1MmYyNGI5OTYwMjEzOTU2M2IiLCJpYXQiOjE3MTk1ODMwNTgsImV4cCI6MTcxOTU4NjY1OH0.eN0lnpG93qoQBXYiWU8-lLarGp35pYLDNrwSffF0YzI
+
+{
+  "productId": "667ec52bf24b996021395659",
+  "quantity": 3
+}
+
+###  (Add `###` to separate different requests)
+POST http://localhost:3000/api/cart/update
+Content-Type: application/json
+Authorization: Bearer {{token}}  # Replace {{token}} with a valid JWT token
+
+{
+  "productId": "60f8d0ec5f4b7a2b0c4bfea9",
+  "quantity": 5
+}
+
+###  (Add `###` to separate different requests)
+DELETE http://localhost:3000/api/cart/remove
+Content-Type: application/json
+Authorization: Bearer {{token}}  # Replace {{token}} with a valid JWT token
+
+{
+  "productId": "60f8d0ec5f4b7a2b0c4bfea9"
+}
+
+###  (Add `###` to separate different requests)
